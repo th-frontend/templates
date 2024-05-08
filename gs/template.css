@@ -1,0 +1,58 @@
+:root {
+    --brand-color:0 149 218;
+    --brand-color-dark:17 60 100;
+    --brand-color-bright:0 192 243;
+    --nav-brand-color:rgb(0 149 218);
+    --nav-brand-color-dark:rgb(17 60 100);
+}
+/*** Widget Style ***/
+.thm-title {
+    font-size:1rem;
+    margin-top:1rem;
+    text-align:center;
+}
+/**** Horizontal Social Icons ****/
+.social-share-inline ul {
+    padding:0!important;
+    margin:0;
+    border:0;
+    list-style:none;
+    overflow:hidden;
+}
+.social-share-inline ul li {
+    font-size:14px;
+    font-family:trebuchet ms,
+    lucida grande,
+    lucida sans unicode,
+    lucida sans,
+    Tahoma,
+    sans-serif;
+    padding:6px;
+    float:left;
+}
+.horizontal_social_share_icon_clipboard, .horizontal_social_share_icon_email, .horizontal_social_share_icon_facebook, .horizontal_social_share_icon_google, .horizontal_social_share_icon_linkedin, .horizontal_social_share_icon_pinterest, .horizontal_social_share_icon_twitter {
+    background:#ededed!important;
+    border-radius:50px;
+    transition:background-color 1s;
+}
+.horizontal_social_share_icon_facebook:hover {
+    background:#3b5998!important
+}
+.horizontal_social_share_icon_twitter:hover {
+    background:#1da1f2!important
+}
+.horizontal_social_share_icon_google:hover {
+    background:#db4437!important
+}
+.horizontal_social_share_icon_linkedin:hover {
+    background:#0077b5!important
+}
+.horizontal_social_share_icon_pinterest:hover {
+    background:#bd081c!important
+}
+.horizontal_social_share_icon_email:hover {
+    background:#2ec0c8!important
+}
+.horizontal_social_share_icon_clipboard:hover {
+    background:#ff5419!important
+}
