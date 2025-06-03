@@ -127,3 +127,96 @@ Review and update configurations for external services.
     *   `[[service_area_google_map]]` (L364 in `borders.php`). This will require configuration with the new company's service area data and potentially API keys.
 
 By addressing these areas, the template can be successfully adapted for a new company's website.
+
+## Automated Client Template Generation
+
+This section describes how to use the provided Python script and JSON configuration to automate much of the template customization process.
+
+### 1. Overview
+
+The automation relies on two key components:
+*   `krs-main/config.json_template`: A template file for client-specific configurations.
+*   `krs-main/generate_client_template.py`: A Python script that processes the configuration and applies it to a copy of the template.
+
+### 2. `config.json_template` Usage
+
+1.  **Copy the Template:**
+    *   Locate the `krs-main/config.json_template` file.
+    *   Copy this file to a new location (e.g., a client-specific project directory or a temporary working folder).
+    *   Rename the copied file to `config.json`.
+
+2.  **Edit `config.json`:**
+    *   Open your newly created `config.json` file in a text editor.
+    *   Carefully review and update the placeholder values with the specific client's information. This includes:
+        *   Company details (`companyInfo`): Name, phone, address, service areas, etc.
+        *   Website settings (`websiteSettings`): Metadata, URLs for new logos, favicon, and other brand-specific assets.
+        *   Theme preferences (`theme`): Desired primary, secondary, text, and background colors; primary and secondary font family declarations.
+        *   Homepage content (`homepageContent`): URLs for specific homepage images (e.g., main background, owner photo).
+        *   Service information (`serviceInfo`): Links to service pages, URLs for service-specific header images or icons.
+        *   Navigation (`navigation.socialMediaLinks`): URLs for the client's social media profiles.
+        *   Integrations (`integrations`): New Google Fonts URL, Adobe Fonts Kit ID, Google Maps API key if applicable.
+    *   Refer to the structure and comments within `config.json_template` for guidance on what each field represents.
+
+### 3. `generate_client_template.py` Usage
+
+1.  **The Script:**
+    *   The script `krs-main/generate_client_template.py` is responsible for creating a new client-specific template folder and applying the customizations defined in your `config.json`.
+
+2.  **Command-Line Execution:**
+    *   Open your terminal or command prompt.
+    *   Navigate to the directory that *contains* the `krs-main` folder (i.e., the parent directory of `krs-main`).
+    *   Run the script using the following command structure:
+
+    ```bash
+    python krs-main/generate_client_template.py path/to/your/client_config.json new_client_template_folder_name
+    ```
+
+    *   **`path/to/your/client_config.json`**: This is the full or relative path to the `config.json` file you prepared in the previous step.
+    *   **`new_client_template_folder_name`**: This is the name for the new directory that will be created to house the customized template files (e.g., `krs_client_abc_site`). This folder will be created at the same level as the `krs-main` directory.
+
+3.  **Script Actions:**
+    *   The script will first create the `new_client_template_folder_name` directory.
+    *   It will then copy all files and subdirectories from the `krs-main` template into this new folder, excluding `generate_client_template.py` itself and `config.json_template`.
+    *   Next, it will read your specified `client_config.json`.
+    *   Finally, it will process `borders.php`, `inline.css`, and `template.css` within the new folder, replacing placeholders and hardcoded values (like colors, fonts, and specific URLs) with the settings from your configuration file.
+
+### 4. Output
+
+Upon successful execution, you will have a new folder (e.g., `krs_client_abc_site`) containing a version of the web template tailored with the client's specific information, branding, and asset links as defined in your `config.json`.
+
+### 5. Important Notes
+
+*   **Python Version:** This script is intended for use with Python 3.
+*   **Server-Side Placeholders:** Placeholders that are processed by server-side languages/CMS (e.g., `[[content]]`, `[[top_nav]]`, `[[single_silo_nav]]`, `[[social_footer]]`, `[[custom_core_v3_5]]`, `[[custom_core_v3_js]]`) are generally *not* replaced with final content by this Python script. They will remain in the generated PHP files for the server-side rendering engine or CMS to handle. The script may replace some of these with HTML comments or basic structural links if defined in the config (e.g., custom CSS/JS links).
+*   **Review Output:** Always review the generated files to ensure all replacements have occurred as expected and to make any further manual adjustments if necessary.
+*   **Backup:** It's always a good practice to work with version control or have backups of your original template and configuration files.
+
+### Using the GitHub Action for Template Generation
+
+For a more integrated approach, you can use the GitHub Action to generate client templates.
+
+1.  **Accessing the Action:**
+    *   Navigate to the main page of the repository on GitHub.
+    *   Click on the "Actions" tab.
+    *   In the left sidebar, you will find a list of workflows. Click on "Generate Client Template".
+
+2.  **Manual Trigger:**
+    *   This workflow is designed for manual triggering via `workflow_dispatch`.
+    *   Above the list of workflow runs, you will see a "Run workflow" dropdown button. Click it.
+
+3.  **Input Parameters:**
+    *   You will be prompted to provide the following inputs:
+        *   **`config_filename`**: Enter the name of the client's JSON configuration file (e.g., `clientA.json`). This file **must be located in the `krs-main/client_configs/` directory** within the repository *before* running the action.
+        *   **`branch_name`**: Specify the desired name for the new branch that will be created to store the generated client template (e.g., `client/clientA`, `feature/clientA-template`).
+
+4.  **Running the Action:**
+    *   After filling in the input parameters, select the branch you want to run the workflow from (usually your main development branch, e.g., `main` or `master`).
+    *   Click the "Run workflow" button.
+
+5.  **Outcome:**
+    *   The GitHub Action will execute the `krs-main/generate_client_template.py` script using the configuration you specified.
+    *   Upon successful completion, a new branch (with the name you provided for `branch_name`) will be automatically created in the repository. This branch will contain the full website template, customized with the client's information and branding from their configuration file. The customized files will be at the root of this new branch.
+
+6.  **Prerequisites:**
+    *   Ensure the client's JSON configuration file (e.g., `clientA.json`) has been created, populated, and pushed to the `krs-main/client_configs/` directory in the repository *before* attempting to run the GitHub Action.
+    *   The `generate_client_template.py` script must be up-to-date in the branch from which you run the workflow.

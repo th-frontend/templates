@@ -1,0 +1,63 @@
+name: Generate Client Template
+
+on:
+  workflow_dispatch:
+    inputs:
+      config_filename:
+        description: 'Filename of the client config (e.g., clientA.json). Expected in krs-main/client_configs/.'
+        required: true
+        type: string
+      branch_name:
+        description: 'Name for the new branch (e.g., client/clientA).'
+        required: true
+        type: string
+
+jobs:
+  generate_and_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Define Output Directory
+        id: paths
+        run: echo "OUTPUT_DIR=client_template_output" >> $GITHUB_ENV
+
+      - name: Run Template Generation Script
+        run: |
+          python krs-main/generate_client_template.py krs-main/client_configs/${{ github.event.inputs.config_filename }} ${{ env.OUTPUT_DIR }}
+        env:
+          PYTHONPATH: . # Ensures krs-main can be imported if needed by scripts
+
+      - name: Commit and Push to New Branch
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+          # Create new branch from the current HEAD
+          git checkout -b ${{ github.event.inputs.branch_name }}
+
+          # Copy generated files from output directory to the repo root for the new branch
+          # This assumes the output_dir contains the complete desired structure (borders.php, inline.css etc. at its root)
+          # Use rsync to overwrite existing files from the base template with the generated ones.
+          # The dot at the end of rsync copies contents of OUTPUT_DIR into the current directory (branch root).
+          rsync -av --delete ${{ env.OUTPUT_DIR }}/ .
+
+          # If OUTPUT_DIR itself should not be committed, add it to .gitignore if not already present
+          # Or remove it after copying if it was created within the tracked repo structure
+          # For now, assuming it's a temporary staging for files to be moved to root.
+          # rm -rf ${{ env.OUTPUT_DIR }} # Optional: clean up the temp output dir if it's in the repo structure
+
+          git add .
+          # Check if there are changes to commit to avoid error with empty commit
+          if ! git diff --staged --quiet; then
+            git commit -m "Generate client template from ${{ github.event.inputs.config_filename }} for ${{ github.event.inputs.branch_name }}"
+            git push -u origin ${{ github.event.inputs.branch_name }}
+          else
+            echo "No changes to commit. Template may be identical or script failed silently."
+          fi

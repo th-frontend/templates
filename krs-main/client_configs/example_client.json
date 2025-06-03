@@ -1,0 +1,102 @@
+{
+  "companyInfo": {
+    "name": "Client Company Name",
+    "phone": "1-800-555-1212",
+    "email": "contact@example.com",
+    "address": "123 Main Street, Anytown, ST 12345",
+    "licenseNumber": "CL-1234567890",
+    "serviceTerritory": "Greater Anytown Region",
+    "majorCities": [
+      "Anytown",
+      "Springfield",
+      "Shelbyville"
+    ],
+    "state": "YourState"
+  },
+  "websiteSettings": {
+    "title": "Default Website Title - [Company Name]",
+    "metaDescription": "Default meta description for [Company Name].",
+    "metaKeywords": "roofing, repair, replacement, [city1], [city2]",
+    "faviconUrl": "/assets/images/custom/favicon.ico",
+    "logoUrl": "/assets/images/custom/logo_main.png",
+    "stickyLogoUrl": "/assets/images/custom/logo_sticky.png",
+    "noNailPledgeBadgeUrl": "/assets/images/custom/no_nail_pledge.png",
+    "contractorNationLogoUrl": "/assets/images/custom/cn_logo.png",
+    "klausBrandSvgUrl": "/assets/images/custom/klaus_brand.svg",
+    "klausHausSvgUrl": "/assets/images/custom/klaus_haus.svg",
+    "customCssUrl": "assets/css/custom.css",
+    "customJsUrl": "assets/js/custom.js"
+  },
+  "theme": {
+    "primaryColor": "#FF0000",
+    "secondaryColor": "#00FF00",
+    "accentColorYellow": "#FFFF00",
+    "accentColorLightGray": "#DDDDDD",
+    "accentColorBlue": "#0000FF",
+    "accentColorBrightRed": "#EE0000",
+    "textColorDark": "#333333",
+    "textColorLight": "#FFFFFF",
+    "backgroundColorLight": "#F8F8F8",
+    "backgroundColorDark": "#222222",
+    "fontPrimary": "'Open Sans', sans-serif",
+    "fontSecondary": "'Roboto', sans-serif",
+    "fontCustom1": "'Brother-1816', sans-serif"
+  },
+  "homepageContent": {
+    "mainMessageHeadline": "Quality Services from [Company Name]!",
+    "mainMessageOffer": "Get a Free Estimate Today!",
+    "mainMessageCtaLink": "/free-estimate.html",
+    "mainMessageBackgroundUrl": "/assets/images/custom/main_message_bg.jpg",
+    "ownerPhotoUrl": "/assets/images/custom/owner_photo.jpg",
+    "marketingImageUrl": "/assets/images/custom/marketing_image_homepage.png",
+    "warrantyBannerDesktopUrl": "/assets/images/custom/warranty_banner_desktop.png",
+    "warrantyBannerMobileUrl": "/assets/images/custom/warranty_banner_mobile.png"
+  },
+  "serviceInfo": {
+    "defaultSiloHeaderBackground": "/assets/images/stock_generic/silo_header_default.jpg",
+    "servicePageLinks": [
+      {
+        "name": "Roof Repair",
+        "url": "/roof-repair.html",
+        "siloHeaderImageUrl": "/assets/images/custom_services/roof_repair_header.jpg",
+        "serviceBoxImageUrl": "/assets/images/custom_services/service_box_repair.png"
+      },
+      {
+        "name": "Roof Replacement",
+        "url": "/roof-replacement.html",
+        "siloHeaderImageUrl": "/assets/images/custom_services/roof_replacement_header.jpg",
+        "serviceBoxImageUrl": "/assets/images/custom_services/service_box_replacement.png"
+      },
+      {
+        "name": "Gutter Installation",
+        "url": "/gutter-installation.html",
+        "siloHeaderImageUrl": "/assets/images/custom_services/gutter_header.jpg",
+        "serviceBoxImageUrl": "/assets/images/custom_services/service_box_gutters.png"
+      },
+      {
+        "name": "Siding",
+        "url": "/siding.html",
+        "siloHeaderImageUrl": "/assets/images/custom_services/siding_header.jpg",
+        "serviceBoxImageUrl": "/assets/images/custom_services/service_box_siding.png"
+      }
+    ],
+    "whyChooseUsBackgroundUrl": "/assets/images/custom/why_choose_us_bg.jpg",
+    "numberedListIconsPath": "/assets/images/icons/numbered_list/",
+    "playButtonIconUrl": "/assets/images/icons/play_button.png"
+  },
+  "navigation": {
+    "socialMediaLinks": {
+      "facebook": "https://facebook.com/yourcompany",
+      "twitter": "https://twitter.com/yourcompany",
+      "linkedin": "https://linkedin.com/company/yourcompany",
+      "youtube": "https://youtube.com/yourcompany",
+      "instagram": "https://instagram.com/yourcompany"
+    }
+  },
+  "integrations": {
+    "googleFontsUrl": "https://fonts.googleapis.com/css?family=Open+Sans:400,700&family=Roboto:400,700&display=swap",
+    "adobeFontsKitId": "NEW_ADOBE_FONT_KIT_ID",
+    "googleMapsApiKey": "YOUR_GOOGLE_MAPS_API_KEY_HERE",
+    "stickySidebarJsUrl": "https://a80427d48f9b9f165d8d-c913073b3759fb31d6b728a919676eab.ssl.cf1.rackcdn.com/v3/js/sticky-sidebar.js"
+  }
+}
