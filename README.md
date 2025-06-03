@@ -1,48 +1,38 @@
-# Site Templates
+# Website Templates
 
-This project provides website templates for different purposes.
+This repository contains example PHP and CSS templates for quickly building websites. Two template families are included:
 
-## Project Structure
+- **`gs/`** – the "Gutter Shutter" template.
+- **`krs-main/`** – the "KRS" template with tools for generating client specific copies.
+- **`krs/`** – an older KRS directory kept for reference.
 
-The project is organized into the following directories:
+## Generating a Client Template
 
-- `gs/`: This directory contains the "Gutter Shutter" template.
-- `krs/`: This directory contains the "KRS Template - Brown Roofing Remix".
+The `krs-main` directory ships with a script that can produce a fully customised copy of the template based on a JSON configuration file.
 
-## gs/ Template
+1. Copy `krs-main/config.json_template` and edit the values to match your client. A filled out example is provided in `krs-main/client_configs/example_client.json`.
+2. Run the generator from the repository root:
 
-The `gs/` template is a website template for Gutter Shutter. It consists of the following files:
+```bash
+python krs-main/generate_client_template.py path/to/your_config.json new_folder_name
+```
 
-- `before-borders.php`: This file contains PHP code that defines CSS styles and HTML structure for various components of the template, such as sidebar navigation, city pages, and an inline step form.
-- `borders.php`: This is the main template file. It includes the HTML structure for the header, hero section, page content, map, and footer. It also contains PHP logic for conditional rendering of certain sections based on the page type.
-- `inline.css`: This file contains extensive CSS rules, including a reset, typography styles, button styles, and layout styles for the template.
-- `template.css`: This file defines some root CSS variables and base styles for widgets.
+The script will create `new_folder_name` containing the PHP and CSS files with your client values injected.
 
-## krs/ Template
+## Creating the JSON Config via a Form
 
-The `krs/` template is referred to as the "KRS Template - Brown Roofing Remix". Currently, the main template file (`krs/borders.php`) and CSS file (`krs/template.css`) are empty. The `krs/readme.md` provides a starting point for its documentation.
+To make filling out the configuration easier, open `krs-main/client_config_form.html` in your browser. This page contains a form for all of the fields in the config file. After you complete the form and click **Generate JSON**, a formatted JSON block will appear at the bottom of the page. Copy this text into a new file inside `krs-main/client_configs/` (for example `clientA.json`) and use it with the generator script.
 
-## How to Use
+## Repository Layout
 
-To use these templates:
+```
+/gs             Gutter Shutter template files
+/krs            Legacy KRS template
+/krs-main       Main KRS template with generator script and config tools
+```
 
-1.  Identify the template you want to use (`gs/` or `krs/`).
-2.  Copy the files from the chosen template directory to your web server or Content Management System (CMS).
-3.  Modify the template files as needed to fit your specific requirements. This may involve:
-    *   Customizing content within the PHP and HTML files.
-    *   Adjusting styles in the CSS files.
-    *   Integrating with any backend systems or databases if necessary.
-4.  Ensure your web server is configured to execute PHP files if you are using the PHP functionalities within the templates.
-
-## Contributing
-
-Contributions to improve and expand these templates are welcome! If you have new templates, improvements to existing ones, or bug fixes, please follow these steps:
-
-1.  Fork the repository.
-2.  Create a new branch for your changes.
-3.  Make your changes, including clear comments and documentation where applicable.
-4.  Submit a pull request for review.
+Each template directory contains PHP and CSS files that you can modify or extend for your project.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details (if a LICENSE file is added in the future).
+This project is released under the MIT License.
