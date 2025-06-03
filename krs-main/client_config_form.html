@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Config Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { margin-bottom: 20px; }
+    label { display:block; margin-top:10px; }
+    input, textarea { width: 100%; padding:4px; }
+    .service { border:1px solid #ccc; padding:10px; margin-top:10px; }
+  </style>
+</head>
+<body>
+<h1>Client Configuration Generator</h1>
+<form id="configForm">
+  <section>
+    <h2>Company Info</h2>
+    <label>Name <input name="companyInfo.name"></label>
+    <label>Phone <input name="companyInfo.phone"></label>
+    <label>Email <input name="companyInfo.email"></label>
+    <label>Address <input name="companyInfo.address"></label>
+    <label>License Number <input name="companyInfo.licenseNumber"></label>
+    <label>Service Territory <input name="companyInfo.serviceTerritory"></label>
+    <label>Major Cities (comma separated) <input name="companyInfo.majorCities"></label>
+    <label>State <input name="companyInfo.state"></label>
+  </section>
+  <section>
+    <h2>Website Settings</h2>
+    <label>Title <input name="websiteSettings.title"></label>
+    <label>Meta Description <textarea name="websiteSettings.metaDescription"></textarea></label>
+    <label>Meta Keywords <input name="websiteSettings.metaKeywords"></label>
+    <label>Favicon URL <input name="websiteSettings.faviconUrl"></label>
+    <label>Logo URL <input name="websiteSettings.logoUrl"></label>
+    <label>Sticky Logo URL <input name="websiteSettings.stickyLogoUrl"></label>
+    <label>No Nail Pledge Badge URL <input name="websiteSettings.noNailPledgeBadgeUrl"></label>
+    <label>Contractor Nation Logo URL <input name="websiteSettings.contractorNationLogoUrl"></label>
+    <label>Klaus Brand SVG URL <input name="websiteSettings.klausBrandSvgUrl"></label>
+    <label>Klaus Haus SVG URL <input name="websiteSettings.klausHausSvgUrl"></label>
+    <label>Custom CSS URL <input name="websiteSettings.customCssUrl"></label>
+    <label>Custom JS URL <input name="websiteSettings.customJsUrl"></label>
+  </section>
+  <section>
+    <h2>Theme</h2>
+    <label>Primary Color <input name="theme.primaryColor" value="#FF0000"></label>
+    <label>Secondary Color <input name="theme.secondaryColor"></label>
+    <label>Accent Yellow <input name="theme.accentColorYellow"></label>
+    <label>Accent Light Gray <input name="theme.accentColorLightGray"></label>
+    <label>Accent Blue <input name="theme.accentColorBlue"></label>
+    <label>Accent Bright Red <input name="theme.accentColorBrightRed"></label>
+    <label>Text Color Dark <input name="theme.textColorDark"></label>
+    <label>Text Color Light <input name="theme.textColorLight"></label>
+    <label>Background Light <input name="theme.backgroundColorLight"></label>
+    <label>Background Dark <input name="theme.backgroundColorDark"></label>
+    <label>Primary Font <input name="theme.fontPrimary"></label>
+    <label>Secondary Font <input name="theme.fontSecondary"></label>
+    <label>Custom Font 1 <input name="theme.fontCustom1"></label>
+  </section>
+  <section>
+    <h2>Homepage Content</h2>
+    <label>Main Headline <input name="homepageContent.mainMessageHeadline"></label>
+    <label>Main Offer <input name="homepageContent.mainMessageOffer"></label>
+    <label>CTA Link <input name="homepageContent.mainMessageCtaLink"></label>
+    <label>Main Background URL <input name="homepageContent.mainMessageBackgroundUrl"></label>
+    <label>Owner Photo URL <input name="homepageContent.ownerPhotoUrl"></label>
+    <label>Marketing Image URL <input name="homepageContent.marketingImageUrl"></label>
+    <label>Warranty Banner Desktop URL <input name="homepageContent.warrantyBannerDesktopUrl"></label>
+    <label>Warranty Banner Mobile URL <input name="homepageContent.warrantyBannerMobileUrl"></label>
+  </section>
+  <section>
+    <h2>Service Info</h2>
+    <label>Default Silo Header Background <input name="serviceInfo.defaultSiloHeaderBackground"></label>
+    <div id="services">
+      <h3>Service Page Links</h3>
+      <button type="button" id="addServiceBtn">Add Service</button>
+    </div>
+    <label>Why Choose Us Background URL <input name="serviceInfo.whyChooseUsBackgroundUrl"></label>
+    <label>Numbered List Icons Path <input name="serviceInfo.numberedListIconsPath"></label>
+    <label>Play Button Icon URL <input name="serviceInfo.playButtonIconUrl"></label>
+  </section>
+  <section>
+    <h2>Social Media Links</h2>
+    <label>Facebook <input name="navigation.socialMediaLinks.facebook"></label>
+    <label>Twitter <input name="navigation.socialMediaLinks.twitter"></label>
+    <label>LinkedIn <input name="navigation.socialMediaLinks.linkedin"></label>
+    <label>YouTube <input name="navigation.socialMediaLinks.youtube"></label>
+    <label>Instagram <input name="navigation.socialMediaLinks.instagram"></label>
+  </section>
+  <section>
+    <h2>Integrations</h2>
+    <label>Google Fonts URL <input name="integrations.googleFontsUrl"></label>
+    <label>Adobe Fonts Kit ID <input name="integrations.adobeFontsKitId"></label>
+    <label>Google Maps API Key <input name="integrations.googleMapsApiKey"></label>
+    <label>Sticky Sidebar JS URL <input name="integrations.stickySidebarJsUrl"></label>
+  </section>
+  <button type="submit">Generate JSON</button>
+</form>
+<pre id="output"></pre>
+<script>
+function setNested(obj, path, value) {
+  const parts = path.split('.');
+  while (parts.length > 1) {
+    const key = parts.shift();
+    if (!(key in obj)) obj[key] = {};
+    obj = obj[key];
+  }
+  obj[parts[0]] = value;
+}
+
+const form = document.getElementById('configForm');
+const output = document.getElementById('output');
+const servicesDiv = document.getElementById('services');
+document.getElementById('addServiceBtn').onclick = () => {
+  const div = document.createElement('div');
+  div.className = 'service';
+  div.innerHTML = `
+    <label>Service Name <input name="service.name"></label>
+    <label>URL <input name="service.url"></label>
+    <label>Silo Header Image URL <input name="service.siloHeaderImageUrl"></label>
+    <label>Service Box Image URL <input name="service.serviceBoxImageUrl"></label>
+  `;
+  servicesDiv.appendChild(div);
+};
+
+form.onsubmit = (e) => {
+  e.preventDefault();
+  const config = {
+    companyInfo:{}, websiteSettings:{}, theme:{}, homepageContent:{},
+    serviceInfo:{ servicePageLinks:[] }, navigation:{ socialMediaLinks:{} }, integrations:{}
+  };
+  const formData = new FormData(form);
+  for (const [key, value] of formData.entries()) {
+    if (key.startsWith('service.')) continue;
+    if (value) setNested(config, key, value);
+  }
+  document.querySelectorAll('.service').forEach(div => {
+    const serviceObj = {};
+    div.querySelectorAll('input').forEach(inp => {
+      if (inp.value) serviceObj[inp.name.replace('service.', '')] = inp.value;
+    });
+    if (Object.keys(serviceObj).length) config.serviceInfo.servicePageLinks.push(serviceObj);
+  });
+  output.textContent = JSON.stringify(config, null, 2);
+};
+</script>
+</body>
+</html>
