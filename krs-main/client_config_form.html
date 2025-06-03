@@ -96,6 +96,7 @@
   <button type="submit">Generate JSON</button>
 </form>
 <pre id="output"></pre>
+<button id="downloadBtn" type="button" style="display:none;">Download JSON</button>
 <script>
 function setNested(obj, path, value) {
   const parts = path.split('.');
@@ -110,6 +111,7 @@ function setNested(obj, path, value) {
 const form = document.getElementById('configForm');
 const output = document.getElementById('output');
 const servicesDiv = document.getElementById('services');
+const downloadBtn = document.getElementById('downloadBtn');
 document.getElementById('addServiceBtn').onclick = () => {
   const div = document.createElement('div');
   div.className = 'service';
@@ -141,6 +143,19 @@ form.onsubmit = (e) => {
     if (Object.keys(serviceObj).length) config.serviceInfo.servicePageLinks.push(serviceObj);
   });
   output.textContent = JSON.stringify(config, null, 2);
+  downloadBtn.style.display = 'inline-block';
+};
+
+downloadBtn.onclick = () => {
+  const blob = new Blob([output.textContent], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'client_config.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 };
 </script>
 </body>

@@ -21,7 +21,7 @@ The script will create `new_folder_name` containing the PHP and CSS files with y
 
 ## Creating the JSON Config via a Form
 
-To make filling out the configuration easier, open `krs-main/client_config_form.html` in your browser. This page contains a form for all of the fields in the config file. After you complete the form and click **Generate JSON**, a formatted JSON block will appear at the bottom of the page. Copy this text into a new file inside `krs-main/client_configs/` (for example `clientA.json`) and use it with the generator script.
+To make filling out the configuration easier, open `krs-main/client_config_form.html` in your browser (double-click it on most systems). This page shows a friendly form for every field in the config file. After you complete the form and click **Generate JSON**, the resulting JSON will appear at the bottom of the page along with a **Download JSON** button. Save the file and move it into `krs-main/client_configs/` (for example `clientA.json`) and use it with the generator script.
 
 ## Repository Layout
 
