@@ -1,1 +1,216 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klaus Roofing - Great Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+        }
+
+        .container {
+            display: flex;
+            min-height: 400px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-section {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 400px;
+        }
+
+        .content-section {
+            flex: 1;
+            background: linear-gradient(to bottom, #f8f9fa 60%, #1e3a5f 60%);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .top-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-headline {
+            color: #2563eb;
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            background: #65a30d;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #4d7c0f;
+        }
+
+        .sale-section {
+            background: #1e3a5f;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border: 2px dashed white;
+            margin: 10px;
+        }
+
+        .sale-header {
+            background: white;
+            color: #1e3a5f;
+            padding: 8px 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .sale-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .discount-amount {
+            color: #f97316;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .sale-description {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .asterisk {
+            font-size: 1.5rem;
+            vertical-align: super;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                min-height: 250px;
+                order: 1;
+            }
+
+            .content-section {
+                order: 2;
+                padding: 20px;
+                background: linear-gradient(to bottom, #f8f9fa 50%, #1e3a5f 50%);
+            }
+
+            .top-content {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            .main-headline {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .sale-section {
+                padding: 20px;
+                margin: 5px;
+            }
+
+            .discount-amount {
+                font-size: 2.5rem;
+            }
+
+            .sale-description {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-headline {
+                font-size: 1.7rem;
+            }
+
+            .discount-amount {
+                font-size: 2.2rem;
+            }
+
+            .sale-description {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 15px;
+            }
+
+            .top-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section"></div>
+        
+        <div class="content-section">
+            <div class="top-content">
+                <span class="main-headline">
+                    Great Service -<br>
+                    It's Factored In!
+                </span>
+                <button class="cta-button">Schedule a Free Estimate</button>
+            </div>
+            
+            <div class="sale-section">
+                <div class="sale-header">SPRING ROOFING SALE</div>
+                <div class="sale-subtitle">Stop the Leaks Before They Start</div>
+                <div class="discount-amount">$500 OFF</div>
+                <div class="sale-description">
+                    A Complete Klaus Roofing System<span class="asterisk">*</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
