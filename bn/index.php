@@ -183,6 +183,34 @@
             </div>
         </div>
     </section>
-    
+
+
+     <section class="klaus-content-section">
+        <div class="klaus-content-container">
+            <div class="klaus-content-header">
+                Durable Roof Repairs in Kansas
+            </div>
+            
+            <h2 class="klaus-content-title">
+                Roof Repairs, Replacements, & Inspections You Can Count On
+            </h2>
+            
+            <p class="klaus-content-paragraph">
+                Does your roof leak, have missing shingles, wood rot, or other problems? Roof damage can cause issues for your entire property, including indoor water damage, mold, pests, foundation settlement, lowered energy efficiency, and more. Not only will problems create an uncomfortable home, but it can also diminish its overall curb appeal and value.
+            </p>
+            
+            <p class="klaus-content-paragraph">
+                While other contractors examine your roof at the surface, Klaus Roofing Systems by Green Factor looks at your system from every layer. Our roofers understand the many causes for roof issues, including ice dams, poor roof ventilation, insufficient attic insulation, and attic air sealing - which is why we offer solutions for these problems and more. We even adhere to The Klaus Roofing Way, which guarantees quality service, durable craftsmanship, lasting results, and protection to your property throughout the entire project.
+            </p>
+            
+            <p class="klaus-content-paragraph">
+                So whether you need a complete roof replacement after a severe storm or minor wood rot repairs, Klaus Roofing Systems by GFI Pro are the roofers you can trust. We offer free roofing estimates throughout Kansas in Lawrence, Topeka, Shawnee, and areas nearby. Schedule yours today!
+            </p>
+            
+            <div class="klaus-content-cta">
+                <button class="klaus-cta-button">Schedule a Free Estimate</button>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
