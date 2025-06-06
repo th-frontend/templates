@@ -101,5 +101,42 @@
     </div>
 
     !-- end services -->
+
+ <section class="about-section">
+        <div class="container">
+            <div class="content-left">
+                <div class="section-header">
+                    Expert Roofer Serving Shawnee, Lawrence, Topeka, & Nearby Areas
+                </div>
+                
+                <h2 class="main-heading">
+                    Reliable Roof Repairs, Roof Replacements, Attic Insulation, & More In Kansas
+                </h2>
+                
+                <p class="content-paragraph">
+                    When maintaining a safe and comfortable home, your roof is the first line of defense. Without quality roofing materials, asphalt shingles, and energy-efficient attic insulation, your home will be vulnerable to property and roof damage, including interior water stains, wood rot, mold, pest problems, drafty rooms, and more.
+                </p>
+                
+                <p class="content-paragraph">
+                    Klaus Roofing Systems by Green Factor has been serving Northeast Kansas homeowners through our sister business, Green Factor Insulation, since 2004. In that time, we provided reliable home energy solutions, quality service, and lasting results. We know what it takes to create a truly efficient home and a durable roofing system at every layer. So whether you need a new roof replacement, reliable roof repairs, or blown cellulose insulation in the attic, contact the professional roofers at Klaus Roofing Systems by Green Factor.
+                </p>
+                
+                <p class="content-paragraph">
+                    We proudly serve Lawrence, Topeka, Olathe, Lenexa, and nearby areas throughout Kansas. Schedule a free estimate and roof inspection to learn more.
+                </p>
+            </div>
+            
+            <div class="image-section">
+                <div class="main-image">
+                    [House with Roof Image]
+                </div>
+                <div class="overlay-callout">
+                    Whether you need roof wood rot repairs, a new roof replacement, or cellulose insulation installation, we can help with all your roofing and attic energy needs.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 </body>
 </html>
