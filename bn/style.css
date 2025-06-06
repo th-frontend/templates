@@ -180,4 +180,137 @@
                 padding: 15px;
             }
         }
+
+
+
+  .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .services-grid-bottom {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e5e7eb;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-title {
+            color: #2563eb;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Placeholder images */
+        .roof-replacement {
+            background-image: linear-gradient(45deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%);
+        }
+
+        .roof-repair {
+            background-image: linear-gradient(135deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%);
+        }
+
+        .asphalt-shingles {
+            background-image: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%);
+        }
+
+        .attic-insulation {
+            background-image: linear-gradient(45deg, #fef3c7 25%, #fde68a 25%, #fde68a 50%, #fef3c7 50%, #fef3c7 75%, #fde68a 75%);
+        }
+
+        .gutters-downspouts {
+            background-image: linear-gradient(135deg, #dbeafe 25%, #bfdbfe 25%, #bfdbfe 50%, #dbeafe 50%, #dbeafe 75%, #bfdbfe 75%);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-grid-bottom {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: none;
+            }
+
+            .service-content {
+                padding: 20px;
+            }
+
+            .service-title {
+                font-size: 1.2rem;
+            }
+
+            .service-description {
+                font-size: 0.9rem;
+            }
+
+            .service-image {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 640px) {
+      
+
+            .services-grid,
+            .services-grid-bottom {
+                gap: 15px;
+            }
+
+            .service-image {
+                height: 160px;
+            }
+
+            .service-content {
+                padding: 15px;
+            }
+        }
  
