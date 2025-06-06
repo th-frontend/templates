@@ -12,24 +12,48 @@
         }
 
         /* Hero layout */
-        .container {
+        .hero-container {
             display: flex;
+            width: 100%; /* Takes full viewport width */
             min-height: 400px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
+        /* General .container rules - used by hero's right side and other sections */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto; /* Centers .container block itself */
+            /* min-height: 400px; /* Removed, apply to specific containers like .hero-container */
+        }
+
+        /* Specific rules for .container when it's the right half of the hero */
+        .hero-container > .container {
+            flex-basis: 50%; /* Takes right 50% of .hero-container space */
+            margin: 0; /* Is a flex item, not a block to be centered by margin */
+            padding: 0; /* content-section will have padding */
+            /* display:flex is inherited from general .container, good for content-section */
+            min-height: inherit; /* from .hero-container */
+        }
+
+        /* General .image-section rules - shared by hero's left and other image sections */
         .image-section {
-            flex: 1;
-            background-image: url('images/shutterstock_446643607.png');
+            flex: 1; /* Default to take available space, hero overrides with flex-basis */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 400px;
+            min-height: 400px; /* Default min-height */
+            /* REMOVED hero-specific background-image from here */
+        }
+
+        /* Specific rules for .image-section when it's the left half of the hero */
+        .hero-container > .image-section {
+            flex-basis: 50%; /* Takes left 50% of .hero-container space */
+            background-image: url('images/shutterstock_446643607.png'); /* Hero-specific image */
+            min-height: inherit; /* from .hero-container */
         }
 
         .content-section {
-            flex: 1;
+            flex: 1; /* Fills its parent container */
             background: linear-gradient(to bottom, #f8f9fa 60%, #1e3a5f 60%);
             padding: 40px;
             display: flex;
@@ -117,19 +141,46 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .container {
+            /* Stacking for hero section */
+            .hero-container {
                 flex-direction: column;
             }
 
-            .image-section {
+            .hero-container > .image-section { /* Hero image on mobile */
+                flex-basis: auto;
+                width: 100%;
                 min-height: 250px;
-                order: 1;
+                /* order: default */
             }
 
+            .hero-container > .container { /* Hero content wrapper on mobile */
+                flex-basis: auto;
+                width: 100%;
+                max-width: 100%; /* Override desktop constraint from general .container rule */
+                 /* order: default */
+            }
+
+            /* Stacking for general .container elements (NOT in hero) */
+            .container:not(.hero-container > .container) {
+                flex-direction: column;
+            }
+
+            /* Ordering for general .image-section elements (NOT in hero) */
+            .image-section:not(.hero-container > .image-section) {
+                min-height: 250px;
+                order: 1; /* Original order for non-hero image sections */
+            }
+
+            /* General .content-section mobile styles (applies to hero's content-section too) */
             .content-section {
-                order: 2;
                 padding: 20px;
                 background: linear-gradient(to bottom, #f8f9fa 50%, #1e3a5f 50%);
+                /* order: 2; /* This was the original generic rule, now handled more specifically */
+            }
+
+            /* Ordering for .content-section when it's a direct child of a stacking .container (and not in hero) */
+            .container:not(.hero-container > .container) > .content-section {
+                 order: 2;
             }
 
             .top-content {
