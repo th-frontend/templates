@@ -21,7 +21,7 @@
 
         .image-section {
             flex: 1;
-            background-image: url('bn/images/shutterstock_446643607.png');
+            background-image: url('images/shutterstock_446643607.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -249,25 +249,25 @@
             line-height: 1.5;
         }
 
-        /* Placeholder images */
+        /* Service images */
         .roof-replacement {
-            background-image: linear-gradient(45deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%);
+            background-image: url('images/roof_install_23.png');
         }
 
         .roof-repair {
-            background-image: linear-gradient(135deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%);
+            background-image: url('images/roof_install_26.png');
         }
 
         .asphalt-shingles {
-            background-image: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%);
+            background-image: url('images/shutterstock_489852454.png');
         }
 
         .attic-insulation {
-            background-image: linear-gradient(45deg, #fef3c7 25%, #fde68a 25%, #fde68a 50%, #fef3c7 50%, #fef3c7 75%, #fde68a 75%);
+            background-image: url('images/shutterstock_1806266920.png');
         }
 
         .gutters-downspouts {
-            background-image: linear-gradient(135deg, #dbeafe 25%, #bfdbfe 25%, #bfdbfe 50%, #dbeafe 50%, #dbeafe 75%, #bfdbfe 75%);
+            background-image: url('images/shutterstock_1668502213 (1).png');
         }
 
         /* Mobile Responsive */
@@ -371,7 +371,7 @@
             width: 100%;
             height: 400px;
             background-color: #e5e7eb;
-            background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+            background-image: url('images/wolfgang-hasselmann-ELjlnM3JSag-unsplash.png');
             background-size: cover;
             background-position: center;
             border-radius: 12px;
@@ -472,10 +472,10 @@
 
 
         /* "Why Choose Us" section */
- .klaus-why-choose-section {
+        .klaus-why-choose-section {
             position: relative;
             padding: 80px 0;
-            background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/roof_install_23@2x.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -798,7 +798,7 @@
 
         .klaus-insulation-image {
             flex: 1;
-            background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+            background-image: url('images/shutterstock_1850872603.png');
             background-size: cover;
             background-position: center;
             min-height: 500px;
