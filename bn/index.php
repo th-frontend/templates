@@ -242,7 +242,32 @@
         </div>
     </section>
 
-
+<section class="klaus-cta-section">
+        <div class="klaus-cta-container">
+            <h2 class="klaus-cta-title">
+                Schedule A Free Roofing & Attic Insulation Estimate
+            </h2>
+            
+            <p class="klaus-cta-description">
+                Want to create a safer, more comfortable, and valuable home overall? Contact the roofers at Klaus Roofing Systems by Green Factor today! With our expert roofing and attic insulation services, we create homes that feel as good as they look. Schedule a free service estimate today. We serve Kansas areas throughout Topeka, Lawrence, Shawnee, Ottawa, Lenexa, Olathe, Leavenworth, Tecumseh, Bonner Springs, Gardner, and areas nearby.
+            </p>
+            
+            <div class="klaus-cta-boxes">
+                <div class="klaus-cta-box klaus-financing-box">
+                    <h3 class="klaus-box-title">Financing</h3>
+                    <p class="klaus-box-subtitle">Options Available</p>
+                    <button class="klaus-financing-button">Learn More</button>
+                </div>
+                
+                <div class="klaus-cta-box klaus-dealer-box">
+                    <div class="klaus-logo-placeholder">
+                        KLAUS ROOFING<br>SYSTEMS
+                    </div>
+                    <p class="klaus-dealer-text">Authorized Dealer</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>
