@@ -137,6 +137,52 @@
         </div>
     </section>
 
+
+     <section class="klaus-why-choose-section">
+        <div class="klaus-gradient-overlay"></div>
+        
+        <div class="klaus-why-container">
+            <h2 class="klaus-why-title">Why Homeowners Choose Us</h2>
+            
+            <div class="klaus-features-grid">
+                <div class="klaus-feature-box">
+                    <div class="klaus-feature-icon klaus-icon-truck"></div>
+                    <div class="klaus-feature-content">
+                        <p class="klaus-feature-text">
+                            Serving Northeast Kansas since 2004 through our sister business, Green Factor Insulation
+                        </p>
+                    </div>
+                </div>
+
+                <div class="klaus-feature-box">
+                    <div class="klaus-feature-icon klaus-icon-gear"></div>
+                    <div class="klaus-feature-content">
+                        <p class="klaus-feature-text">
+                            Provide quality services with The Klaus Roofing Way for all types of roof damage
+                        </p>
+                    </div>
+                </div>
+
+                <div class="klaus-feature-box">
+                    <div class="klaus-feature-icon klaus-icon-people"></div>
+                    <div class="klaus-feature-content">
+                        <p class="klaus-feature-text">
+                            Licensed & professionally-trained roofers
+                        </p>
+                    </div>
+                </div>
+
+                <div class="klaus-feature-box">
+                    <div class="klaus-feature-icon klaus-icon-check"></div>
+                    <div class="klaus-feature-content">
+                        <p class="klaus-feature-text">
+                            We offer financing solutions & free estimates for all roofing services
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>
