@@ -11,196 +11,204 @@
             line-height: 1.4;
         }
 
-        /* Hero layout */
+      /* Hero layout */
         .hero-container {
             display: flex;
-            width: 100%; /* Takes full viewport width */
-            min-height: 400px;
+            width: 100%;
+            min-height: 500px;
         }
 
         /* General .container rules - used by hero's right side and other sections */
         .container {
             display: flex;
             max-width: 1200px;
-            margin: 0 auto; /* Centers .container block itself */
-            /* min-height: 400px; /* Removed, apply to specific containers like .hero-container */
+            margin: 0 auto;
         }
 
         /* Specific rules for .container when it's the right half of the hero */
         .hero-container > .container {
-            flex-basis: 50%; /* Takes right 50% of .hero-container space */
-            margin: 0; /* Is a flex item, not a block to be centered by margin */
-            padding: 0; /* content-section will have padding */
-            /* display:flex is inherited from general .container, good for content-section */
-            min-height: inherit; /* from .hero-container */
+            flex-basis: 50%;
+            margin: 0;
+            padding: 0;
+            min-height: inherit;
         }
 
         /* General .image-section rules - shared by hero's left and other image sections */
         .image-section {
-            flex: 1; /* Default to take available space, hero overrides with flex-basis */
+            flex: 1;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 400px; /* Default min-height */
-            /* REMOVED hero-specific background-image from here */
+            min-height: 500px;
         }
 
         /* Specific rules for .image-section when it's the left half of the hero */
         .hero-container > .image-section {
-            flex-basis: 50%; /* Takes left 50% of .hero-container space */
-            background-image: url('images/shutterstock_446643607.png'); /* Hero-specific image */
-            min-height: inherit; /* from .hero-container */
+            flex-basis: 50%;
+            background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            min-height: inherit;
         }
 
         .content-section {
-            flex: 1; /* Fills its parent container */
-            background: linear-gradient(to bottom, #f8f9fa 60%, #1e3a5f 60%);
-            padding: 40px;
+            flex: 1;
+            background: linear-gradient(to bottom, #e8f4fd 55%, #1e3a5f 55%);
+            padding: 50px 40px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 500px;
         }
 
         .top-content {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
+            padding: 40px 30px;
+            border-radius: 12px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .main-headline {
-            color: #2563eb;
-            font-size: 2.5rem;
-            font-weight: bold;
+            color: #1e40af;
+            font-size: 3.2rem;
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .cta-button {
             background: #65a30d;
             color: white;
-            padding: 15px 30px;
+            padding: 18px 40px;
             border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .cta-button:hover {
             background: #4d7c0f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .sale-section {
             background: #1e3a5f;
             color: white;
-            padding: 25px;
+            padding: 30px 25px;
             text-align: center;
-            border: 2px dashed white;
-            margin: 10px;
+            border: 3px dashed white;
+            margin: 0 10px;
+            border-radius: 8px;
+            position: relative;
         }
 
         .sale-header {
             background: white;
             color: #1e3a5f;
-            padding: 8px 20px;
+            padding: 10px 25px;
             font-weight: bold;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
             display: inline-block;
+            border-radius: 4px;
+            text-transform: uppercase;
         }
 
         .sale-subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            font-weight: normal;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #e8f4fd;
         }
 
         .discount-amount {
             color: #f97316;
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 10px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
         }
 
         .sale-description {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 15px;
+            line-height: 1.2;
         }
 
         .asterisk {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             vertical-align: super;
+            color: #f97316;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            /* Stacking for hero section */
             .hero-container {
                 flex-direction: column;
+                min-height: auto;
             }
 
-            .hero-container > .image-section { /* Hero image on mobile */
+            .hero-container > .image-section {
                 flex-basis: auto;
                 width: 100%;
-                min-height: 250px;
-                /* order: default */
+                min-height: 300px;
             }
 
-            .hero-container > .container { /* Hero content wrapper on mobile */
+            .hero-container > .container {
                 flex-basis: auto;
                 width: 100%;
-                max-width: 100%; /* Override desktop constraint from general .container rule */
-                 /* order: default */
+                max-width: 100%;
             }
 
-            /* Stacking for general .container elements (NOT in hero) */
-            .container:not(.hero-container > .container) {
-                flex-direction: column;
-            }
-
-            /* Ordering for general .image-section elements (NOT in hero) */
-            .image-section:not(.hero-container > .image-section) {
-                min-height: 250px;
-                order: 1; /* Original order for non-hero image sections */
-            }
-
-            /* General .content-section mobile styles (applies to hero's content-section too) */
             .content-section {
-                padding: 20px;
-                background: linear-gradient(to bottom, #f8f9fa 50%, #1e3a5f 50%);
-                /* order: 2; /* This was the original generic rule, now handled more specifically */
-            }
-
-            /* Ordering for .content-section when it's a direct child of a stacking .container (and not in hero) */
-            .container:not(.hero-container > .container) > .content-section {
-                 order: 2;
+                padding: 30px 20px;
+                background: linear-gradient(to bottom, #e8f4fd 45%, #1e3a5f 45%);
+                min-height: auto;
             }
 
             .top-content {
-                padding: 20px;
-                margin-bottom: 15px;
-            }
-
-            .main-headline {
-                font-size: 2rem;
+                padding: 30px 20px;
                 margin-bottom: 20px;
             }
 
+            .main-headline {
+                font-size: 2.4rem;
+                margin-bottom: 25px;
+            }
+
             .cta-button {
-                padding: 12px 25px;
-                font-size: 1rem;
+                padding: 15px 30px;
+                font-size: 1.1rem;
             }
 
             .sale-section {
-                padding: 20px;
-                margin: 5px;
+                padding: 25px 20px;
+                margin: 0 5px;
+            }
+
+            .discount-amount {
+                font-size: 3rem;
+            }
+
+            .sale-description {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-headline {
+                font-size: 2rem;
+                line-height: 1.2;
             }
 
             .discount-amount {
@@ -210,31 +218,19 @@
             .sale-description {
                 font-size: 1.1rem;
             }
-        }
-
-        @media (max-width: 480px) {
-            .main-headline {
-                font-size: 1.7rem;
-            }
-
-            .discount-amount {
-                font-size: 2.2rem;
-            }
-
-            .sale-description {
-                font-size: 1rem;
-            }
 
             .content-section {
-                padding: 15px;
+                padding: 20px 15px;
             }
 
             .top-content {
-                padding: 15px;
+                padding: 25px 15px;
+            }
+
+            .sale-subtitle {
+                font-size: 1.1rem;
             }
         }
-
-
 
         /* Services section */
   .services-container {
