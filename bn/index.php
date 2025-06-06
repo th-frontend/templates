@@ -212,5 +212,37 @@
             </div>
         </div>
     </section>
+
+
+     <section class="klaus-insulation-section">
+        <div class="klaus-insulation-image">
+            [Insulation Installation Image]
+        </div>
+        
+        <div class="klaus-insulation-content">
+            <h2 class="klaus-insulation-title">
+                Cellulose, Air Sealing, Radiant Barriers, & More Energy-Efficient Attic Insulation Services
+            </h2>
+            
+            <p class="klaus-insulation-paragraph">
+                Your Attic Plays A Major Part In Creating A Safe, Comfortable, And Energy-Efficient Home. Without An Adequate Thermal Barrier Between The Attic And Other Living Spaces, Air Leaks Can Spread Throughout The Home - Which Can Cause Uncomfortable Temperatures, Drafts, Poor Indoor Air Quality, And More. Plus, Without Reliable Attic Insulation And Air Sealing, Your Hvac System Will Have To Work Hard To Regulate Temperatures, Raising Your Energy Bills.
+            </p>
+            
+            <p class="klaus-insulation-paragraph">
+                Klaus Roofing Systems By Green Factor Has Been Providing Reliable Home Energy Solutions To Northeast Kansas Homeowners Since 2004 Through Our Sister Business, Green Factor Insulation. We Can Examine Your Attic And Recommend The Perfect Solutions For Your Home, Including Air Sealing, Cellulose Insulation, Duct Insulation, And More.
+            </p>
+            
+            <p class="klaus-insulation-paragraph">
+                Schedule A Free Attic Insulation Estimate Today. We Serve Kansas Areas Throughout Olathe, Ottawa, Lenexa, And Areas Nearby.
+            </p>
+            
+            <div class="klaus-insulation-cta">
+                <button class="klaus-learn-more-button">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+
+    
 </body>
 </html>
