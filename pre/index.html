@@ -1,0 +1,796 @@
+<style>
+#breadcrumbs {
+    display: none;
+  }
+#content-wrap h1 {
+  color: #fff !important;
+  font-weight: bold;
+}
+  .endorsements {
+    display: none;
+  }
+
+  .inline-contact .wrapper {
+    max-width: initial;
+  }
+
+  .cp-reviews {
+    margin: 3rem 0;
+  }
+
+  .btn-special {
+    margin: 1rem;
+  }
+
+  .btn-special:hover {
+    background: #CF421B;
+  }
+
+  .panel.inline-contact {
+    padding: 0 !important;
+  }
+
+  /* Slider styles */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Hero Section */
+  .hero {
+    display: flex;
+    background-color: #fff;
+  }
+
+  .hero-content {
+    background-color: #001443;
+    color: white;
+    padding: 4% 5% 4%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  .hero-image {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(201, 75, 40, 0.8);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-overlay svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+
+  /* Process Section Styles */
+  .process-section {
+    text-align: center;
+    padding: 60px 0;
+  }
+
+  .process-section h2, .promise-section h2 {
+    font-size: 36px;
+    color: #001443;
+    margin: auto;
+    margin-bottom: 40px;
+    max-width: 50%;
+  }
+
+  .process-steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .process-step {
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  /* Target even-numbered steps for text alignment */
+  .process-step:nth-child(even) .process-content {
+    text-align: right;
+  }
+
+  .process-step:nth-child(even) .process-content h3 {
+    justify-content: flex-end;
+  }
+
+  .process-step:nth-child(even) .process-content h3 span {
+    margin-left: 10px;
+  }
+
+  .process-image {
+    width: 50%;
+  }
+
+  .process-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .process-content {
+    width: 50%;
+    text-align: left;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .process-content h3 {
+    color: #001443;
+    font-size: 24px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .process-content h3 span {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #E62029;
+  }
+
+  .process-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .btn-special {
+    background-color: #E62029;
+    padding: 15px 30px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-special a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .btn-special:hover {
+    background-color: #b33611;
+  }
+
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .process-section h2, .promise-section h2 {
+      max-width: 90%;
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .process-image,
+    .process-content {
+      width: 100%;
+    }
+
+    .process-step:nth-child(even) .process-content {
+      text-align: left;
+    }
+
+    .process-step:nth-child(even) .process-content h3 {
+      justify-content: flex-start;
+    }
+
+    .process-step:nth-child(even) .process-content h3 span {
+      margin-right: 10px;
+      margin-left: 0;
+    }
+
+    .process-content {
+      padding: 20px;
+    }
+
+    .process-content h3 {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .process-step {
+      flex-direction: column;
+    }
+
+    .process-step.mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  /* CTA Button */
+  .cta-button {
+    background-color: #E62029;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px 0;
+  }
+
+  /* Promise Section */
+  .promise-section {
+    background-color: #f0f0f0;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .promise-logo {
+    width: 120px;
+    margin: 0 auto 30px;
+  }
+
+  .promise-intro {
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+
+  .promise-intro a {
+    color: #E62029;
+    text-decoration: none;
+  }
+
+  .guarantees {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  .guarantee {
+    width: 48%;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .guarantee h3 {
+    color: #001443;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .guarantee p {
+    font-size: 16px;
+  }
+
+  .perfection {
+    margin-top: 60px;
+  }
+
+  .perfection h3 {
+    color: #001443;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .perfection p {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 5%;
+    }
+
+    .hero-content h1 {
+      font-size: 28px;
+    }
+
+    .hero,
+    .guarantees {
+      flex-direction: column;
+    }
+
+    .hero-content,
+    .hero-image,
+    .guarantee {
+      width: 100%;
+    }
+  }
+
+  /* Desktop Two-Column Layout */
+  .guarantees-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  .guarantee-desktop {
+    width: 48%;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .guarantee-desktop h3 {
+    color: #001443;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .guarantee-desktop p {
+    font-size: 16px;
+  }
+
+
+  .accordion-container {
+    width: 100%;
+    display: none;
+    /* Hidden by default for desktop */
+  }
+
+  .accordion-item {
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+  }
+
+  .accordion-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .accordion-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #001443;
+    font-weight: bold;
+  }
+
+  .accordion-icon {
+    font-size: 18px;
+    color: #4A9FD1;
+    transition: transform 0.3s ease;
+    margin-right: 15px;
+  }
+
+  .accordion-icon-down {
+    color: #4A9FD1;
+  }
+
+  .accordion-item.active .accordion-icon:not(.accordion-icon-down) {
+    transform: rotate(90deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px 0 45px;
+  }
+
+  .accordion-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #001443;
+    text-align: left;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 500px;
+    /* Adjust based on content needs */
+  }
+
+  .perfection {
+    margin-top: 60px;
+  }
+
+  .perfection h3 {
+    color: #001443;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .perfection p {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .guarantees-desktop {
+      display: none;
+      /* Hide desktop layout on mobile */
+    }
+
+    .accordion-container {
+      display: block;
+      /* Show accordion on mobile */
+    }
+
+    .guarantee-desktop {
+      width: 100%;
+    }
+  }
+
+  .awards-wrapper {
+    background-color: #e9f1f5;
+  }
+
+  .awards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 15px;
+  }
+
+  .awards-text {
+    flex: 0 0 35%;
+  }
+
+  .awards-text h2 {
+    color: #0094ca;
+    font-size: 2rem;
+  }
+
+  .awards-section {
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .awards-section img {
+    max-width: 17%;
+  }
+
+  .award-logo {
+    height: 120px;
+    object-fit: contain;
+  }
+
+  .award-logo.small {
+    height: 100px;
+  }
+
+  /* Media queries for responsiveness */
+  @media (max-width: 1200px) {
+    .awards-container {
+      padding: 30px 50px;
+    }
+
+
+    .award-logo {
+      height: 100px;
+    }
+
+    .award-logo.small {
+      height: 80px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .awards-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .awards-text {
+      flex: 0 0 100%;
+      text-align: center;
+    }
+
+    .awards-section {
+      flex: 0 0 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .award-logo {
+      height: 90px;
+      margin: 0 10px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .awards-container {
+      padding: 20px;
+    }
+
+    .awards-section img {
+      max-width: 33%;
+    }
+
+    .awards-text h2 {
+      font-size: 24px;
+    }
+
+    .award-logo {
+      height: 70px;
+      margin: 5px;
+    }
+  }
+  /***------------------------------------------- Cred Bar -------------------------------------------***/
+#cred {
+    box-sizing:border-box;
+    background:url("https://cdn.treehouseinternetgroup.com/core/images/templates/health/cred-bg.png") #FFF no-repeat center top;
+    padding: 2rem;
+}
+#cred > .row > .columns {
+    height: 125px;
+}
+#cred .columns span {
+    height:125px;
+    display:block;
+    position:relative;
+}
+#cred img {
+    opacity:0.65;
+    max-height:100%;
+    margin:0px auto;
+    position:absolute;
+    -webkit-transform:translate(-50%,
+     -50%);
+    transform:translate(-50%,
+     -50%);
+    top:50%;
+    left:50%;
+}
+#cred img,
+ .grayscale{
+    -webkit-filter:grayscale(100%);
+     /* For Webkit browsers */
+    filter:grayscale(100%);
+    filter:gray;
+     /* For IE 6 - 9 */
+}
+/* Color Version */
+-webkit-filter:grayscale(0%);
+.grayscale:hover{
+    filter:grayscale(0%);
+}
+
+.video-container {
+    position: relative;
+    width: fit-content;
+}
+video {
+  width: 400px
+}
+#playButton {
+    background-color: #E62029;
+}
+#playButton:hover {
+    background-color: #001443;
+}
+#myVideo {
+    width: 100%;
+}
+.play-button {
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: #000;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+    color: #fff;
+}
+</style>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>What to expect with your appointment</h1>
+    <p>At [company], we're more than just a contractor. We're your partner in protecting what matters most. Watch this video to learn exactly what to expect during your home inspection.</p>
+  </div>
+  <div class="hero-image">
+    <video id="myVideo" autoplay controls muted poster="https://cdn.treehouseinternetgroup.com/cms_images/888/Arizona%20Foundation%20Solutions%20Post_Booking.jpg">
+        <source src="https://cdn.treehouseinternetgroup.com/cms_images/888/Arizona%20Foundation%20Solutions%20Post-Booking.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section container">
+  <h2>Here's what happens with your scheduled inspection</h2>
+
+  <div class="process-steps-container">
+
+
+    <!-- Step 1 -->
+    <div class="process-step">
+      <div class="process-content">
+        <h3><span>1 |</span> Confirmation call</h3>
+        <p>A few days prior to your inspection, your Design Specialist will call you to introduce themselves and confirm
+          the date and time.</p>
+      </div>
+      <div class="process-image">
+        <img src="https://cdn.treehouseinternetgroup.com/cms_images/888/CustomerCare-9[1].png"
+          alt="Design specialist making confirmation call">
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="process-step mobile">
+      <div class="process-image">
+        <img src="https://cdn.treehouseinternetgroup.com/cms_images/888/EmploymentBrand-Sales-2.png"
+          alt="[company] vehicle arriving for inspection">
+      </div>
+      <div class="process-content">
+        <h3><span>2 |</span> On-the-way call</h3>
+        <p>On the day of your inspection, your Design Specialist will call you to let you know they're on the way to
+          your home. They'll also send you a GPS tracking link so you'll know exactly when you can expect them to
+          arrive.</p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="process-step">
+      <div class="process-content">
+        <h3><span>3 |</span> Inspection</h3>
+        <p>Upon arrival, your Design Specialist will introduce themselves and answer any questions you have. They'll
+          conduct a thorough inspection of the issue or problem area. We encourage you to join them during the
+          inspection and ask questions.</p>
+      </div>
+      <div class="process-image">
+        <img src="https://cdn.treehouseinternetgroup.com/cms_images/888/smartjack-install_2024_HI-RES-275.png"
+          alt="Design specialist conducting inspection">
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="process-step mobile">
+      <div class="process-image">
+        <img src="https://cdn.treehouseinternetgroup.com/cms_images/888/smartjack-install_2024_HI-RES-301.png"
+          alt="Design specialist discussing repair plan">
+      </div>
+      <div class="process-content">
+        <h3><span>4 |</span> Repair plan</h3>
+        <p>Your Design Specialist will sit down with you to explain what caused the problem, how we can fix it, and
+          discuss your options and a plan for repairing your home. By the end of this phase, you'll know exactly what's
+          causing your home's problems, exactly how we can fix it, and exactly how much it will cost.</p>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="process-step">
+      <div class="process-content">
+        <h3><span>5 |</span> Scheduling the repair</h3>
+        <p>Once you're ready to move forward with the work, your Design Specialist will coordinate with you to schedule
+          the project so you can get the peace of mind you deserve as soon as possible.</p>
+      </div>
+      <div class="process-image">
+        <img src="https://cdn.treehouseinternetgroup.com/cms_images/888/smartjack-install_2024_HI-RES-322.png"
+          alt="Design specialist scheduling repair work">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="container">
+  <div class="cp-reviews">
+    <div class="cp-reviews-inner">
+      <div class="cp-reviews-wrap">
+      <h2 style="text-align: center;">Happy Customers</h2>
+<div><img src="https://cdn.treehouseinternetgroup.com/img/module_icons/28_2.png" class="widget-module" data-id="345750" data-type="2" title="Reviews Widget"/></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="cred" class="container">
+<div class="row">
+<div class="small-6 medium-2 medium-offset-1 columns"><img src="https://cdn.treehouseinternetgroup.com/cms_images/888/5faedfe104853_icri-logo.jpg" alt="ICRI Concrete Repair" width="135" height="90" loading="lazy" decoding="async"/></div>
+<div class="small-6 medium-2 columns"><img src="https://cdn.treehouseinternetgroup.com/cms_images/888/5d49f99fd10b4_sd100.jpg" alt="Sun Devil 100" width="135" height="90" loading="lazy" decoding="async" /></div>
+<div class="small-6 medium-2 columns"><img src="https://cdn.treehouseinternetgroup.com/cms_images/854/SEA_AZ_logo-128x125.png" alt="SEA" width="128" height="125" loading="lazy" decoding="async" /></div>
+<div class="small-6 medium-2 columns"><img src="https://cdn.treehouseinternetgroup.com/cms_images/854/rosie-about.jpg" alt="Rosie on the House" width="135" height="90" loading="lazy" decoding="async" /></div>
+<div class="small-6 small-pull-3 medium-2 medium-pull-1 columns"><img src="https://cdn.treehouseinternetgroup.com/cms_images/888/633de0ce20333_bbbtorchawardfinalist2022.png" width="383" height="90" alt="BBB Torch Award" loading="lazy" decoding="async" /></div>
+</div>
+</div>
+<script>
+  <!-- JavaScript for accordion functionality -->
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      const accordionItems = document.querySelectorAll('.accordion-item');
+
+      // Only add accordion functionality on mobile
+      if (window.innerWidth <= 768) {
+        accordionItems.forEach(item => {
+          const header = item.querySelector('.accordion-header');
+          const content = item.querySelector('.accordion-content');
+
+          // Add click event to headers
+          header.addEventListener('click', () => {
+            // Toggle active class
+            const isActive = item.classList.toggle('active');
+
+            // Update content max-height
+            if (isActive) {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+              content.style.maxHeight = 0;
+            }
+          });
+        });
+
+        // Open first accordion item by default on mobile
+        const firstItem = accordionItems[0];
+        if (firstItem) {
+          firstItem.classList.add('active');
+          const firstContent = firstItem.querySelector('.accordion-content');
+          firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+        }
+      }
+
+      // Handle window resize
+      window.addEventListener('resize', function () {
+        // Check if we're crossing the mobile/desktop threshold
+        if (window.innerWidth <= 768) {
+          document.querySelector('.guarantees-desktop').style.display = 'none';
+          document.querySelector('.accordion-container').style.display = 'block';
+        } else {
+          document.querySelector('.guarantees-desktop').style.display = 'flex';
+          document.querySelector('.accordion-container').style.display = 'none';
+        }
+      });
+    });
+  })(); 
+  
+  const video = document.getElementById("myVideo");
+const playButton = document.getElementById("playButton");
+playButton.addEventListener("click", function() {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+});
+  </script>
