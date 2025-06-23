@@ -225,11 +225,164 @@
 
   .obs-main {
     flex-direction: column;
-    /* Stack logo and nav vertically */
     align-items: center;
-    /* Center items */
     gap: 1rem;
-    /* Space between logo and nav */
+    position: relative; /* For positioning hamburger menu / mobile nav */
+  }
+
+  /* --- Mobile Navigation Styles --- */
+  .obs-nav {
+    width: 100%; /* Ensure nav container takes full width for absolute positioning of ul */
+  }
+
+  .obs-nav ul#main-nav-list { /* Target by ID for specificity */
+    display: none; /* Hidden by default, shown by JS */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the .obs-main containing block */
+    left: 0;
+    right: 0;
+    background-color: var(--obs-white);
+    border-top: 1px solid #e5e5e5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0.5rem 0;
+  }
+
+  .obs-nav ul#main-nav-list.mobile-nav-active { /* Class to be toggled by JS */
+    display: flex;
+  }
+
+  .obs-nav ul#main-nav-list li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .obs-nav ul#main-nav-list a {
+    display: block;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--obs-black);
+    text-decoration: none; /* Explicitly remove underline for mobile nav items */
+  }
+
+  .obs-nav ul#main-nav-list a:hover {
+    background-color: #f9f9f9;
+    color: var(--obs-blue);
+  }
+
+  .obs-nav ul#main-nav-list a::after { /* Remove desktop underline hover effect for mobile nav */
+    display: none;
+  }
+
+  .obs-nav ul#main-nav-list li:last-child a {
+    border-bottom: none;
+  }
+
+  .obs-nav ul#main-nav-list .obs-cta { /* Adjust CTA button style for mobile menu */
+    display: block;
+    margin: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-radius: 4px;
+    background-color: var(--obs-cta-bg); /* Ensure mobile CTA retains its style */
+    color: var(--obs-cta-txt) !important;
+  }
+  .obs-nav ul#main-nav-list .obs-cta:hover {
+    background: var(--obs-blue);
+  }
+
+  /* Hamburger Menu Button Styles */
+  .obs-hamburger-btn {
+    display: flex; /* Initially visible in this media query */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1010;
+    position: absolute; /* Positioned relative to .obs-main */
+    top: 50%; /* Attempt to vertically center with logo */
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+
+  .obs-hamburger-btn__bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--obs-black);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Hamburger animation to X when active (JS will toggle .hamburger-active on button) */
+  .obs-hamburger-btn.hamburger-active .obs-hamburger-btn__bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .obs-hamburger-btn.hamburger-active .obs-hamburger-btn__bar:nth-child(2) {
+    opacity: 0;
+  }
+  .obs-hamburger-btn.hamburger-active .obs-hamburger-btn__bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+} /* End of @media (max-width: 720px) */
+
+/* Hide hamburger on desktop by default */
+.obs-hamburger-btn {
+  display: none;
+}
+
+/* Ensure that at desktop sizes, the original nav is shown correctly */
+@media (min-width: 721px) {
+  .obs-nav ul#main-nav-list {
+    display: flex !important; /* Overrides mobile 'display:none' */
+    flex-direction: row;
+    position: static; /* Back to normal flow */
+    background-color: transparent;
+    border-top: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto; /* Back to auto width */
+  }
+
+  .obs-nav ul#main-nav-list li {
+    width: auto; /* Reset from 100% */
+  }
+
+  .obs-nav ul#main-nav-list a {
+    display: inline; /* Reset from block */
+    padding: 0; /* Reset padding */
+    border-bottom: none; /* Reset border */
+    /* Color and hover are handled by general .obs-nav a rules */
+  }
+
+   .obs-nav ul#main-nav-list a::after { /* Restore desktop underline hover effect */
+    display: block;
+     content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: var(--obs-blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s;
+  }
+  .obs-nav ul#main-nav-list a:hover::after {
+      transform: scaleX(1);
+  }
+
+  .obs-nav ul#main-nav-list .obs-cta {
+    display: inline-block; /* Reset from block */
+    margin: 0; /* Reset margin */
+    padding: 0.55rem 1rem; /* Restore desktop padding */
+    border-radius: 2rem; /* Restore desktop radius */
+    /* Background and color are handled by general .obs-cta rules */
   }
 }
 /* =============== END HEADER STYLES =============== */
@@ -409,51 +562,74 @@
 }
 
 /********* Responsiveness for Hero Section *********/
-/* Adjustments for screens up to 960px wide */
+/* Adjustments for screens up to 960px wide (Tablet and smaller) */
 @media (max-width: 960px) {
   .obs-hero__inner {
     flex-direction: column;
     /* Stack elements vertically */
     text-align: center;
     /* Center text content */
+    gap: 1.5rem; /* Reduce gap for closer stacking */
   }
 
   .obs-hero__photos {
-    order: -1;
-    /* Move photos to the top on smaller screens */
+    order: -1; /* Move photos to the top on smaller screens */
+    /* Further adjustments for photo grid at this breakpoint if needed */
   }
+   .obs-hero__mascot {
+    order: -2; /* Ensure mascot is above photos if photos are reordered */
+    margin-bottom: 1rem; /* Add some space if mascot is directly above copy */
+  }
+  .obs-hero__copy {
+    order: 0; /* Ensure copy comes after mascot and photos in stacked layout */
+  }
+
 }
 
-/* Adjustments for screens up to 600px wide */
+/* Adjustments for screens up to 600px wide (Mobile) */
 @media (max-width: 600px) {
+  .obs-hero__inner {
+    padding: 2rem 1rem; /* Reduce padding on mobile */
+  }
   .obs-hero__title {
-    font-size: 34px;
-    /* Smaller title font */
+    font-size: 32px; /* Slightly smaller title font for mobile */
+    line-height: 1.15;
+  }
+  .obs-hero__eyebrow {
+    font-size: 16px; /* Adjust eyebrow font size */
+  }
+  .obs-hero__sub {
+    font-size: 13px; /* Adjust subtext font size */
+    margin-bottom: 1.25rem;
   }
 
   .obs-hero__mascot img {
-    width: 200px;
-    /* Smaller mascot */
+    width: 180px; /* Smaller mascot for mobile */
+    max-width: 40vw;
   }
 
-  /* Adjust photo collage grid for smaller screens */
+  /* Adjust photo collage grid for smaller screens - stack them */
   .obs-hero__photos {
-    grid-template-columns: 1fr 1fr;
-    /* Two equal columns */
-    grid-template-rows: auto auto;
-    /* Auto height for rows */
+    display: flex; /* Switch to flex for easier stacking */
+    flex-direction: column; /* Stack photos vertically */
+    align-items: center; /* Center photos in the column */
+    gap: 0.75rem; /* Smaller gap between photos */
+    width: 100%; /* Allow photos container to take full width */
+    max-width: 280px; /* Max width for the photo stack */
+    margin: 0 auto; /* Center the stack */
   }
 
-  .obs-hero__photos .large {
-    width: 180px;
-    /* Smaller large photo */
-    height: 180px;
-  }
-
+  .obs-hero__photos .large,
   .obs-hero__photos .small {
-    width: 180px;
-    /* Smaller small photos */
-    height: 85px;
+    width: 100%; /* Make all photos take full width of their new flex container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 260px; /* Consistent max width for individual photos in the stack */
+  }
+   .obs-hero__photos .large {
+    /* Specific adjustments for large if needed, otherwise defaults are fine */
+  }
+  .obs-hero__photos .small {
+    /* Specific adjustments for small if needed, otherwise defaults are fine */
   }
 }
 /* =============== END HERO SECTION STYLES =============== */
