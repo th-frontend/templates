@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Omni Basement Systems – Waterproofing & Foundation Repair</title>
+
+<!-- ===============  BASIC RESET  =============== -->
+<style>
+/* Simple reset / utility helpers */
+*{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+ul{list-style:none}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;font:inherit}
+
+:root{
+  --clr-red:#d71921;
+  --clr-blue:#002a71;
+  --clr-blue-light:#0a1a4a;
+  --clr-grey:#f4f6fa;
+  --clr-dark:#111;
+  --fw-bold:700;
+  --fw-medium:600;
+  --section-py:4rem;
+  --max-width:1200px;
+  --trans:all .25s ease;
+  --radius:4px;
+  --shadow:0 2px 6px rgba(0,0,0,.08);
+  --font-main:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+body{font-family:var(--font-main);line-height:1.6;color:var(--clr-dark);background:#fff}
+
+/* Headings */
+h1,h2,h3,h4{font-weight:var(--fw-bold);line-height:1.25;color:var(--clr-dark)}
+h1{font-size:1.9rem}
+h2{font-size:1.6rem}
+h3{font-size:1.25rem}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--clr-red);
+  color:#fff;
+  padding:.85rem 1.75rem;
+  font-weight:var(--fw-medium);
+  border-radius:var(--radius);
+  transition:var(--trans);
+}
+.btn:hover{background:#b4161b}
+
+/* Layout helpers */
+.container{width:90%;max-width:var(--max-width);margin:0 auto}
+.grid{display:grid;gap:2rem}
+@media(min-width:768px){.grid-2{grid-template-columns:repeat(2,1fr)}
+                         .grid-3{grid-template-columns:repeat(3,1fr)}
+                         .grid-4{grid-template-columns:repeat(4,1fr)}}
+
+/* ===============  HEADER  =============== */
+.site-header{background:#fff;box-shadow:var(--shadow)}
+.site-header .top-strip{
+  background:#000;color:#fff;font-size:.8rem;
+  padding:.3rem 0;text-align:right
+}
+.top-strip span+span::before{content:"|";margin:0 .5rem;color:#999}
+.site-header nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 5%;
+  flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:.5rem}
+.logo img{width:180px}
+.main-nav{display:flex;gap:2rem;font-weight:var(--fw-medium)}
+.main-nav a{position:relative}
+.main-nav a::after{
+  content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;
+  background:var(--clr-red);transition:var(--trans)
+}
+.main-nav a:hover::after{width:100%}
+.header-phone{font-weight:var(--fw-bold);color:var(--clr-blue)}
+@media(max-width:700px){
+  .main-nav{flex:1 1 100%;justify-content:space-around;margin-top:1rem}
+}
+
+/* ===============  HERO  =============== */
+.hero{background:#e5e5e5;position:relative}
+.hero .wrapper{display:flex;flex-direction:column-reverse;gap:2rem;align-items:center;padding:3rem 5%}
+@media(min-width:900px){.hero .wrapper{flex-direction:row}}
+.hero-img{flex:1}
+.hero-copy{flex:1;color:#fff;position:relative;padding:2rem}
+.hero-copy::before{/* dark overlay for text legibility on small screens */
+  content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:-1;border-radius:var(--radius)
+}
+.hero-copy h2{font-size:2rem;margin-bottom:1rem}
+.hero-copy p{margin:.5rem 0 1.5rem}
+.hero-copy .btn{background:var(--clr-red)}
+/* cartoon beaver overlay */
+.hero-beaver{
+  position:absolute;left:0;bottom:0;transform:translate(-15% ,12%);
+  width:200px;max-width:35vw;
+}
+
+/* ===============  INTRO / CTA  =============== */
+.intro{background:var(--clr-grey);padding:var(--section-py) 0;text-align:center}
+.intro h1{margin-bottom:1rem}
+.intro h2{color:var(--clr-blue);margin-bottom:1.25rem}
+.intro p{max-width:750px;margin:0 auto 1.25rem;font-size:.95rem;color:#333}
+.intro .btn{margin-top:.5rem}
+
+/* ===============  SOLUTIONS GRID  =============== */
+.solutions{padding:var(--section-py) 0}
+.solution-card{
+  position:relative;border-radius:var(--radius);overflow:hidden;min-height:270px
+}
+.solution-card img{width:100%;height:100%;object-fit:cover;filter:brightness(60%)}
+.solution-card .card-content{
+  position:absolute;inset:0;padding:1.25rem;color:#fff;display:flex;flex-direction:column;justify-content:flex-end
+}
+.card-content h3{font-size:1.2rem;margin-bottom:.5rem}
+.card-content p{font-size:.85rem;margin-bottom:1rem;max-width:260px}
+.card-content a{font-weight:var(--fw-medium);text-decoration:underline}
+
+/* ===============  WHY CHOOSE US  =============== */
+.why-choose{background:var(--clr-grey);padding:var(--section-py) 0}
+.why-choose .wrapper{display:flex;flex-direction:column;gap:2.5rem}
+@media(min-width:900px){.why-choose .wrapper{flex-direction:row}}
+.why-text{background:var(--clr-blue);color:#fff;padding:2rem;border-radius:var(--radius);flex:1}
+.why-text h2{color:#fff;margin-bottom:.75rem}
+.why-text p{font-size:.9rem}
+.why-icon-group{flex:1;display:grid;gap:2rem auto;margin:auto;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));align-items:start;text-align:center}
+.why-icon{display:flex;flex-direction:column;align-items:center;gap:.85rem;font-size:.9rem}
+.why-icon img{width:48px}
+
+/* ===============  REVIEWS  =============== */
+.reviews{position:relative;color:#fff;padding:var(--section-py) 0}
+.reviews::before{
+  content:"";position:absolute;inset:0;background:url('reviews-bg.jpg') center/cover no-repeat;z-index:-2
+}
+.reviews::after{
+  content:"";position:absolute;inset:0;background:rgba(0,20,60,.6);z-index:-1
+}
+.reviews .grid{gap:1.5rem}
+.review-card{
+  background:#fff;border-radius:var(--radius);padding:1rem;color:#000;box-shadow:var(--shadow);max-width:320px
+}
+.review-stars{color:gold;font-size:1.2rem;margin-bottom:.5rem}
+.review-snippet{font-size:.85rem}
+.reviews-heading{margin-bottom:2rem;text-align:center}
+.reviews-heading h2{color:#fff}
+.reviews-heading .btn{border:2px solid #fff;background:transparent;padding:.7rem 2rem}
+.reviews-heading .btn:hover{background:#fff;color:var(--clr-blue)}
+
+/* ===============  SERVICE AREA + MAP  =============== */
+.service-area{background:var(--clr-blue);color:#fff;position:relative;padding:var(--section-py) 0;overflow:hidden}
+.service-area .grid{gap:2rem}
+@media(min-width:900px){.service-area .grid{grid-template-columns:1fr 1fr}}
+.service-area h2{margin-bottom:1rem}
+.city-list{font-size:.9rem;max-height:240px;overflow-y:auto}
+.city-list span{display:inline-block;margin-right:.35rem;margin-bottom:.3rem}
+.service-area .btn{background:#fff;color:var(--clr-blue);font-weight:var(--fw-bold)}
+.map-img{border-radius:var(--radius);box-shadow:var(--shadow)}
+
+/* ===============  CREDIBILITY LOGOS  =============== */
+.credibility{background:#fff;padding:3rem 0;border-bottom:1px solid #e1e7f0}
+.cred-logos{display:flex;justify-content:center;align-items:center;gap:4rem;flex-wrap:wrap}
+.cred-logos img{height:70px;filter:grayscale(100%);opacity:.75;transition:var(--trans)}
+.cred-logos img:hover{filter:none;opacity:1}
+
+/* ===============  FOOTER  =============== */
+.site-footer{background:#eef3f5;padding:var(--section-py) 0;font-size:.9rem}
+.footer-top{display:flex;flex-direction:column;gap:2rem}
+@media(min-width:900px){.footer-top{flex-direction:row}}
+.contact-box{flex:1;background:var(--clr-grey);padding:2rem;border-radius:var(--radius)}
+.contact-box .btn{width:100%;margin-bottom:1.25rem}
+.contact-box .phone{font-size:1.8rem;font-weight:var(--fw-bold);color:var(--clr-blue)}
+.footer-links{flex:2;display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.footer-links h4{font-weight:var(--fw-bold);margin-bottom:1rem}
+.footer-links a{display:block;margin-bottom:.5rem}
+.socials{display:flex;gap:.75rem;margin-top:1.5rem}
+.socials img{width:22px;filter:grayscale(100%);transition:var(--trans)}
+.socials img:hover{filter:none}
+.footer-bottom{text-align:center;margin-top:3rem;font-size:.75rem;color:#666}
+</style>
+</head>
+
+<body>
+
+<!-- ===============  HEADER  =============== -->
+<header class="site-header">
+  <div class="top-strip">
+    <span>We’re&nbsp;Open!</span>
+    <span>Yes, we serve <span style="text-decoration:underline">Territory</span></span>
+    <span class="header-phone">1‑866‑875‑6664</span>
+  </div>
+
+  <nav>
+    <a class="logo" href="#">
+      <img src="logo.png" alt="Omni Basement Systems Logo">
+    </a>
+
+    <div class="main-nav">
+      <a href="#services">Services</a>
+      <a href="#our-work">Our Work</a>
+      <a href="#about-us">About Us</a>
+      <a href="#service-area">Service Area</a>
+      <a href="#free-estimate" class="btn">Free Estimate</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ===============  HERO  =============== -->
+<section id="hero" class="hero">
+  <div class="wrapper container">
+    <div class="hero-copy">
+      <h2>Your Home. Our Team. <br><strong>One Solution.</strong></h2>
+      <img src="all-things-basementy.png" alt="All Things Basementy!" style="width:290px;margin:0 0 1rem 0">
+      <p>Foundation Repair · Basement Waterproofing · Crawl Space Repair · Air Purifier</p>
+      <a href="#free-estimate" class="btn">Get Your Free Estimate</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="hero-sidebar-collage.png" alt="Basement repair collage">
+    </div>
+
+    <!-- Beaver illustration -->
+    <img class="hero-beaver" src="beaver-mascot.png" alt="Beaver construction mascot">
+  </div>
+</section>
+
+<!-- ===============  INTRO / CTA  =============== -->
+<section class="intro">
+  <div class="container">
+    <h1>Hamilton, ON’s Basement Waterproofing &amp; Foundation Repair Contractor</h1>
+    <h2>Serving Ontario since 2003</h2>
+    <p>If you have a wet basement, moldy crawl space or settling foundation you need an effective solution from a company whose expertise, reliability, and workmanship is second‑to‑none. That’s exactly what you will get with us.</p>
+    <p>At Omni Basement Systems, we take care of our customers’ leaking basements, damp crawl spaces and sinking foundations. Have questions? Just let us know and we will be happy to explain what is wrong and how we will fix it … we are here to help.</p>
+    <a href="#free-estimate" class="btn">Get Your Free Estimate</a>
+  </div>
+</section>
+
+<!-- ===============  SOLUTIONS GRID  =============== -->
+<section id="services" class="solutions container">
+  <h2 style="text-align:center;margin-bottom:3rem">Our Solutions</h2>
+
+  <div class="grid grid-2">
+    <!-- Card 1 -->
+    <article class="solution-card">
+      <img src="solution-wet-basement.jpg" alt="Wet basement">
+      <div class="card-content">
+        <h3>Wet Basement?</h3>
+        <p>We offer industry‑leading, customizable waterproofing solutions to keep your basement dry all the time.</p>
+        <a href="#">Learn&nbsp;More&nbsp;&gt;</a>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="solution-card">
+      <img src="solution-cracked-foundation.jpg" alt="Cracked foundation wall">
+      <div class="card-content">
+        <h3>Cracked Foundation?</h3>
+        <p>Our foundation repair products and solutions are tested, proven, and come with a warranty for your peace of mind.</p>
+        <a href="#">Learn&nbsp;More&nbsp;&gt;</a>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="solution-card">
+      <img src="solution-crawl-space.jpg" alt="Crawl space issues">
+      <div class="card-content">
+        <h3>Nasty Crawl Space?</h3>
+        <p>Say goodbye to crawl space problems with our innovative crawl space sealing, insulation, and encapsulation products.</p>
+        <a href="#">Learn&nbsp;More&nbsp;&gt;</a>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="solution-card">
+      <img src="solution-air-quality.jpg" alt="Microscopic mold spores">
+      <div class="card-content">
+        <h3>Poor Air Quality?</h3>
+        <p>Improve indoor air quality and create a healthier, more comfortable home with the Aspen air purifier.</p>
+        <a href="#">Learn&nbsp;More&nbsp;&gt;</a>
+      </div>
+    </article>
+  </div>
+
+  <div style="text-align:center;margin-top:2.5rem">
+    <p><strong>Financing Available</strong> – Standard financing through EnerBank, “Interest Free, 180 days, Same‑as‑Cash Program”, unsecured.</p>
+  </div>
+</section>
+
+<!-- ===============  WHY CHOOSE US  =============== -->
+<section class="why-choose">
+  <div class="container wrapper">
+    <div class="why-text">
+      <h2>Why Homeowners Choose Us</h2>
+      <p>Omni Basement Systems is your local basement waterproofing, crawl space repair, and foundation repair contractor of choice in Hamilton, ON.</p>
+      <p>We are accredited with the Better Business Bureau and maintain a consistent A+ rating. We offer quality basement &amp; foundation work while providing outstanding service to each and every one of our customers.</p>
+      <a href="#" class="btn" style="margin-top:1rem;background:#fff;color:var(--clr-blue)">Learn More&nbsp;&gt;</a>
+    </div>
+
+    <div class="why-icon-group">
+      <div class="why-icon">
+        <img src="icon-satisfaction.png" alt="">
+        <span>Complete Customer Satisfaction</span>
+      </div>
+      <div class="why-icon">
+        <img src="icon-patented.png" alt="">
+        <span>Patented &amp; Awarded Products</span>
+      </div>
+      <div class="why-icon">
+        <img src="icon-awarded.png" alt="">
+        <span>Recognized &amp; Awarded Service</span>
+      </div>
+      <div class="why-icon">
+        <img src="icon-warranty.png" alt="">
+        <span>Written, Transferable Warranties</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============  REVIEWS  =============== -->
+<section class="reviews">
+  <div class="container">
+    <div class="reviews-heading">
+      <h2>Customer Reviews<br>Trusted By Homeowners Like You</h2>
+      <a class="btn" href="#">Read All Reviews</a>
+    </div>
+
+    <div class="grid grid-3">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-snippet">We were really impressed with Todd and Alfredo, they were really good at explaining the whole process and were...</p>
+        <small>Name from Town</small>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-snippet">Your organization is great, friendly, and very professional. They did not fall short of our expectations.</p>
+        <small>Name from Town</small>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-snippet">Your organization is great, friendly, and very professional. They did not fall short of our expectations.</p>
+        <small>Name from Town</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============  SERVICE AREA + MAP  =============== -->
+<section id="service-area" class="service-area">
+  <div class="container grid">
+    <div>
+      <h2>Proudly Serving Greater Ontario</h2>
+      <p>We serve the following areas:</p>
+      <div class="city-list">
+        <span>Allanburg</span><span>Beamsville</span><span>Binbrook</span><span>Burlington</span>
+        <span>Caledonia</span><span>Dundas</span><span>Georgetown</span><span>Grimsby</span>
+        <span>Hamilton</span><span>Jordan Station</span><span>Kitchener</span><span>Niagara Falls</span>
+        <span>Oakville</span><span>Port Colborne</span><span>St. Catharines</span><span>Welland</span>
+        <!-- … more cities … -->
+      </div>
+      <a href="#" class="btn" style="margin-top:1.5rem">More Cities</a>
+    </div>
+
+    <div>
+      <img class="map-img" src="service-area-map.png" alt="Service area map of Southern Ontario">
+    </div>
+  </div>
+</section>
+
+<!-- ===============  CREDIBILITY LOGOS  =============== -->
+<section class="credibility">
+  <div class="container">
+    <div class="cred-logos">
+      <img src="logo-hamilton-chamber.png" alt="Hamilton Chamber of Commerce">
+      <img src="logo-construction-assoc.png" alt="Hamilton | Halton Construction Association">
+      <img src="logo-bbb.png" alt="BBB Accredited Business">
+      <img src="logo-cfib.png" alt="CFIB Member">
+    </div>
+  </div>
+</section>
+
+<!-- ===============  FOOTER  =============== -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <!-- Contact block -->
+    <div class="contact-box">
+      <h4>Contact Us Online</h4>
+      <a href="#free-estimate" class="btn">Get Your Free Estimate</a>
+      <p>Or call us at</p>
+      <div class="phone">1‑866‑875‑6664</div>
+      <div class="socials">
+        <a href="#"><img src="icon-google.png" alt="Google"></a>
+        <a href="#"><img src="icon-linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="icon-youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <!-- Link columns -->
+    <div class="footer-links">
+      <div>
+        <h4>Services</h4>
+        <a href="#">Basement Waterproofing</a>
+        <a href="#">Crawl Space Repair</a>
+        <a href="#">Foundation Repair</a>
+        <a href="#">Health Risks</a>
+        <a href="#">Insulation</a>
+        <a href="#">Testimonials</a>
+        <a href="#">Air Purifier</a>
+      </div>
+
+      <div>
+        <h4>Our Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Financing</a>
+        <a href="#">Meet The Team</a>
+        <a href="#">FAQs</a>
+        <a href="#">Job Opportunities</a>
+        <a href="#">Q&amp;A</a>
+      </div>
+
+      <div>
+        <h4>Our Work</h4>
+        <a href="#">Reviews</a>
+        <a href="#">Photo Gallery</a>
+        <a href="#">Testimonials</a>
+        <a href="#">Omni Videos</a>
+        <a href="#">Before &amp; After</a>
+        <a href="#">Case Studies</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    © 2003–2025 Omni Basement Systems. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
