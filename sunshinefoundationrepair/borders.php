@@ -261,7 +261,7 @@ if (in_array($thePage, $customCityPage)) {
                             elseif (stristr($thePage,"about-us"))
                             {
                                 ?>
-                                 "https://cdn.treehouseinternetgroup.com/cdn-cgi/image/format=auto/cms_images/3351/silo-about-ctbs.jpg"
+                                 "/core/images/templates/spruce/headers/silo-roofing-2.jpg"
                             <?php
                             }
                             elseif (stristr($thePage,"spray-foam"))
@@ -340,7 +340,7 @@ if (in_array($thePage, $customCityPage)) {
                             else
                             {
                                 ?>
-                                "https://cdn.treehouseinternetgroup.com/cdn-cgi/image/format=auto/cms_images/3351/silo-about-ctbs.jpg"
+                                "/core/images/templates/spruce/headers/silo-roofing-2.jpg"
                         <?php
                         }
                         ?>
@@ -380,7 +380,7 @@ if (in_array($thePage, $customCityPage)) {
             <div id="service-area-map" class="container">
                 <img src="https://cdn.treehouseinternetgroup.com/cms_images/1667/generic-map-bg.jpg" alt="[company] service area">
                 <div id="map-target">
-                    <img src="https://cdn.treehouseinternetgroup.com/cms_images/3351/CTBS_map-Mar25-sm.png">
+                    <img src="https://cdn.treehouseinternetgroup.com/cms_images/3351/sunshine-foundation-map-december2022-circle.png">
                 </div>
                 <div id="cities-served">
                     <h2>Our Service Area</h2>
