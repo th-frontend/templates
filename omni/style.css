@@ -409,8 +409,8 @@
   position: absolute;
   inset: 0;
   /* Cover the entire hero section */
-  background: rgba(0, 0, 0, 0.55);
-  /* Semi-transparent black overlay */
+  background: linear-gradient(90deg, rgba(0, 39, 77, 0.75) 0%, rgba(0, 0, 0, 0.55) 100%);
+  /* Semi-transparent blue gradient overlay */
   clip-path: polygon(0 0, 60% 0, 55% 100%, 0% 100%);
   /* Creates the angled shape */
 }
@@ -477,6 +477,12 @@
 }
 
 /* Subtitle text below the main title */
+.obs-hero__tagline {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
 .obs-hero__sub {
   font-size: 14px;
   line-height: 1.4;
